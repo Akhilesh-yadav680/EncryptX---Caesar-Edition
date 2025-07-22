@@ -1,0 +1,44 @@
+from sys import orig_argv
+from ceaser_symbol import symbol
+alphabet=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
+ 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
+ 'u', 'v', 'w', 'x', 'y', 'z']
+print(symbol)
+# def encrypt(original_text,shift_number):
+#     cipher_text=""
+#     for letter in original_text:
+#         shifted_position=alphabet.index(letter)+shift_number
+#         shifted_position%=len(alphabet)
+#         cipher_text+=alphabet[shifted_position]
+#     print(f"Here is the encoded result {cipher_text}")
+# def decrypt(original_text,shift_number):
+#     output_text=""
+#     for letter in original_text:
+#         shifted_position=alphabet.index(letter)-shift_number
+#         shifted_position%=len(alphabet)
+#         output_text+=alphabet[shifted_position]
+#     print(f"Here is the decoded result {output_text}")
+def ceaser(original_text,shift_number,encode_or_decode):
+    output_text = ""
+    if encode_or_decode == "decode":
+        shift_number *= -1
+    for letter in original_text:
+        if letter not in alphabet:
+            output_text+=letter
+        else:
+            shifted_position = alphabet.index(letter) +shift_number
+            shifted_position %= len(alphabet)
+            output_text += alphabet[shifted_position]
+    print(f"Here is the {encode_or_decode}ed result {output_text}")
+should_continue=True
+# decrypt(original_text=message,shift_number=shift)
+# encrypt(original_text=message,shift_number=shift)
+while should_continue:
+    option = input("Enter 'encode' to encrypt a message or 'decode' to decrypt a message: ").lower()
+    message = input("Enter the message \n").lower()
+    shift = int(input("Enter the Shift Number"))
+    ceaser(original_text=message, shift_number=shift, encode_or_decode=option)
+    restart=(input("enter n if you want quit and y if you want to do it again")).lower()
+    if restart=="n":
+        should_continue=False
+        print("goodbye")
