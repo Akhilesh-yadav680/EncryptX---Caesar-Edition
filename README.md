@@ -8,9 +8,16 @@ This project provides a simple and interactive Caesar Cipher tool to **encode or
 - Handles special characters and spaces gracefully
 
 ## 📂 Files
-- `app.py`: Streamlit UI
-- `ceaser_cipher.py`: Caesar cipher logic
-- `requirements.txt`: Required Python packages
+EncryptX---Caesar-Edition/
+│
+├── .gitignore               # Git ignored files
+├── LICENSE                  # MIT License
+├── README.md                # Project description & usage
+│
+├── app.py                   # Streamlit UI for Caesar Cipher
+├── caesar_ASCII_title.py    # Optional ASCII title art
+├── ceaser_cipher.py         # Core Caesar Cipher logic
+├── cli_cipher.py            # Optional CLI interface
 
 ## ▶️ How to Run
 pip install -r requirements.txt
